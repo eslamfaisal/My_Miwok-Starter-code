@@ -24,7 +24,6 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("eslam");
         words.add("faisal");
         Log.i("NumbersActivity",""+words.get(0));
-
         ListView linearLayout = (ListView) findViewById(R.id.my_List);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>
