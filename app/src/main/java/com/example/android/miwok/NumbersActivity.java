@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -23,16 +25,11 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("faisal");
         Log.i("NumbersActivity",""+words.get(0));
 
-        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.my_Linear);
-        int index = 0;
-        while (index<words.size()) {
-            TextView textView = new TextView(this);
-            if (linearLayout != null) {
-                linearLayout.addView(textView);
-            }
-            textView.setText(words.get(index));
-            index++;
-        }
+        ListView linearLayout = (ListView) findViewById(R.id.my_List);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>
+                (this,android.R.layout.simple_list_item_1,words);
+        linearLayout.setAdapter(adapter);
 
     }
 }
